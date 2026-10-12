@@ -1,0 +1,28 @@
+
+apiVersion: apps/v1
+
+kind: Deployment
+
+metadata:
+  name: week12_1app-deployment
+
+spec:
+  replicas: 1
+
+  selector:
+    matchLabels:
+      app: week12_1app
+
+  template:
+    metadata:
+      labels:
+        app: week12_1app
+
+    spec:
+      containers:
+        - name: week12_1app
+
+          image: shreyachundi/week8_docker:another_12_image
+
+          ports:
+            - containerPort: 5003
