@@ -16,11 +16,6 @@
                 return false;
             }
 
-            if (!/^[A-Za-z ]+$/.test(name)) {
-                alert("Username should contain only letters and spaces.");
-                return false;
-            }
-
             if (email === "") {
                 alert("Email cannot be empty.");
                 return false;
@@ -46,19 +41,22 @@
 <body>
     <h1>Register</h1>
 
-    <form name="f1" action="/register" method="post"
-          onsubmit="return validateForm()">
+    <form name="f1"
+          action="/register"
+          method="post"
+          onsubmit="return validateForm()"
+          novalidate>
 
         <label for="name">Username:</label>
-        <input type="text" id="name" name="name" required>
+        <input type="text" id="name" name="name">
         <br><br>
 
         <label for="email">Email:</label>
-        <input type="text" id="email" name="email" required>
+        <input type="text" id="email" name="email">
         <br><br>
 
         <label for="student_id">Student ID:</label>
-        <input type="text" id="student_id" name="student_id" required>
+        <input type="text" id="student_id" name="student_id">
         <br><br>
 
         <input type="submit" value="Register">
